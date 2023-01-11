@@ -1,63 +1,93 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joe Burner Week 2 Notes</title>
-    <meta name="description" content="Week 1">
-    <!-- <link rel="stylesheet" href="css/normalize.css"> -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Yaldevi:wght@500&display=swap"
-        rel="stylesheet">
-    <!-- <link rel="stylesheet" href="css/small.css">
-        <link rel="stylesheet" href="css/medium.css"> -->
-    <script defer src="./main.js"></script>
+    <link type="text/css" href="../style/main.css" rel="stylesheet"/>
+    <link type="text/css" href="../style/nav.css" rel="stylesheet"/>
+    <title>Week02</title>
+
 </head>
-
 <body>
-    <header>
-        <h1>Joe Burner</h1>
-    </header>
-    <main>
-        <h2>WDD 330: Week 2 Notes</h2>
-        <hr>
-        <h3>Learning and Notes</h3>
-        <ul>
-            <li>A major point in programming is keeping your code DRY: Don't Repeat Yourself, or DRY, is a principle of
-                programming that specifies that every part of a program should only be written once. This avoids
-                duplication and means there's no need to keep multiple pieces of code up to date and in sync.
-            </li>
-            <br>
-            <li>You can make an arguments function that returns the arguments passed in. ie funtion arguments(){return
-                arguments;}. I didn't know you could pass arguments into a function unless it was expecting it.
-            </li>
-            <br>
-            <li>Maps store values in key value pairs. Most of the time I have worked with maps inside the curly braces
-                for json purposes.
-            </li>
-            <br>
-            <li>Sets don't allow for repeated values where as an array will.
-            </li>
-            <br>
-            <li>the sort function sorts numbers alphabetically instead of numerically. This can be fixed by passing in
-                another function into the sort function that will compare two numbers. IE a callback
-            </li>
-        </ul>
-        <h3>Questions</h3>
-        <ul>
-            <li> When are bitwise operators used? Have you used them?
-            </li>
-            <br>
-            <li>from the textbook "The best way to change a string to a number is to use the Number method". Why is this
-                way better than parseInt() function?
-            </li>
-        </ul>
-    </main>
-    <footer>
-    </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-</body>
 
+    <header>
+        <div class ="header-content">
+            <div class = "header-text">
+                <h1> Joe Burner </h1> 
+                <h2>WDD 330: Assignment Portal</h2>
+            </div>
+
+        </div>
+    </header>
+
+    <div class="dropdownmenu">
+        <ul>
+            <li>
+                <a href="https://chrismarti343.github.io/wdd330/"> Home</a>
+            </li>
+            <li>
+                <a href="https://chrismarti343.github.io/wdd330/week2/team.html"> Teamwork</a>
+            </li>
+        </ul>
+    </div>
+<main>
+    <h1>Week02</h1>
+    
+    <p>One of the interesting features of Node.js is that if a browser is unable 
+        to run the code, it can be run on the server and downloaded, or if the server 
+        is unavailable, the code can be run on the client.</p>
+    <h2>Programming basics</h2>
+    <ul>
+
+        <li>
+            We pages are made up of three key ingredients HTML, CSS and Javascript.
+        </li>
+        <li>
+            To do not get confused it is better to write each statement on a new line
+        </li>
+        <p>
+            const message = ‘Hello World’;
+        </p>
+        <p>
+            alert(message);
+        </p>
+        <li>I learned how connect javascript and html. Along with that we make some buttons so 
+            they display message in the page.</li>
+        <li>
+            Variables that have been declared using the let keyword can be reassigned to another value.
+        </li>
+        <li>
+            Scope refers how to iterate through a complex objects'
+        </li>
+    </ul>
+
+    <h2>Arrays</h2>
+    <ul>
+        <li>
+            To place the string ‘Superman’ inside the first element of the array heroes.
+        </li>
+        <p>const heroes = [];</p>
+        <p>heroes[0] = ‘Superman’;</p>
+
+        <li>
+            To delete an operator from a array
+        </li>
+        <p>delete heroes[0]</p>
+    </ul>
+
+</main>
+
+<footer>
+    <div class ="footer-content">
+        &copy;<span id="year"></span> | Joe Burner | BYU-I |<a class ="two" href = "https://www.byui.edu/online">BYU-I Online Learning. </a>
+        <br>
+    <div class = "update_time">
+            Last Updated: <span id="update"></span> 
+    </div>
+    </div>
+</footer>
+    
+</body>
 </html>

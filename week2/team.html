@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" href="../style/main.css" rel="stylesheet"/>
+    <link type="text/css" href="../style/nav.css" rel="stylesheet"/>
+    <title>Week02</title>
+
+</head>
+<body>
+
+    <header>
+        <div class ="header-content">
+            <div class = "header-text">
+                <h1> Team 03 </h1> 
+                <h2>WDD 330: Assignment Portal</h2>
+            </div>
+
+        </div>
+    </header>
+
+    <div class="dropdownmenu">
+        <ul>
+            <li>
+                <a href="https://mjburn0428.github.io/wdd330/"> Home</a>
+            </li>
+            <li>
+                <a href="https://mjburn0428.github.io/wdd330/week2/index.html"> Notes</a>
+            </li>
+        </ul>
+    </div>
+<main>
+        <input type="text" id="txtValue">
+        <button onclick="fill()" name="btnClick">Click Me</button>
+        <div id="buttonDisplay"></div>
+        <script>
+            function fill()
+            {
+                console.log("Wegot here");
+                txt=document.getElementById('txtValue').value;
+                console.log(txt);
+                
+                div=document.getElementById('buttonDisplay');
+                div.innerHTML=txt;
+            }
+        </script>
+
+        <input type="text" id="numberField">
+        <button onclick="calculate()">Add Up</button>
+        <div id="numberDisplay"></div>
+        <script>
+            function calculate()
+            {
+                console.log("Calcualate Functions");
+                txt=document.getElementById('numberField').value;
+                n=Number(txt);
+                console.log(n);
+                sum=0;
+                for(let i=0;i<=n;i++)
+                {
+                    console.log(i);
+                    sum+=i;
+                }
+
+                div=document.getElementById('numberDisplay');
+                div.innerHTML=sum;
+            }
+        </script>
+
+        <input type="text" id="numberA">
+        <input type="text" id="numberB">
+        <button onclick="process(1,add)">+</button>
+        <button onclick="process(2,subtract)">-</button>
+        <button onclick="process(3,multiply)">*</button>
+        
+        <div id="addDisplay"></div>
+        <script>
+            function process(selector,myCallback)
+            {
+                console.log("Calcualate Functions");
+                nA=Number(document.getElementById('numberA').value);
+                nB=Number(document.getElementById('numberB').value);
+                console.log(nA);
+                console.log(nB);
+                sum=0;
+                div=document.getElementById('addDisplay');
+                sum=myCallback(nA,nB);
+                div.innerHTML=sum;
+            }
+            function add(a,b)
+            {
+                return a+b;
+            }
+            let subtract = function(a,b) {
+                return a-b;
+            };
+            let multiply = (a,b) => {return a*b};
+            
+             
+        </script>
+        </main>
+
+        <footer>
+            <div class ="footer-content">
+                &copy;<span id="year"></span> | Joe Burner | BYU-I |<a class ="two" href = "https://www.byui.edu/online">BYU-I Online Learning. </a>
+                <br>
+            <div class = "update_time">
+                    Last Updated: <span id="update"></span> 
+            </div>
+            </div>
+        </footer>
+
+</body>
+</html>
