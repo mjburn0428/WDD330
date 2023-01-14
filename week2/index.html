@@ -27,25 +27,24 @@
             <li>
                 <a href="https://mjburn0428.github.io/WDD330/index"> Home</a>
             </li>
-            <li>
-                <a href="https://mjburn0428.github.io/WDD330/week2/team.html"> Teamwork</a>
-            </li>
         </ul>
     </div>
 <main>
-    <h1>Week02</h1>
+    <h1>Week 02 Learning Notes</h1>
     
-    <p>One of the interesting features of Node.js is that if a browser is unable 
-        to run the code, it can be run on the server and downloaded, or if the server 
-        is unavailable, the code can be run on the client.</p>
+    <p>It is interesting that one can execute a script with a command such as "node my.js" JavaScript programs can be inserted almost anywhere into 
+        HTML code using the script tag. I found it interesting that the script can be executes and display a message in the webpage. You can also run external
+        scripts as long as you use the correct src tag and path to the script.
+    </p>
     <h2>Programming basics</h2>
     <ul>
 
         <li>
-            We pages are made up of three key ingredients HTML, CSS and Javascript.
+            The pages are made up of three key important factors, HTML, CSS and Javascript.
         </li>
         <li>
-            To do not get confused it is better to write each statement on a new line
+            It is easily to get confused if your code is all jumbled up near each other. I find it better to 
+            write each statement of code on a new line. Such as below
         </li>
         <p>
             const message = ‘Hello World’;
@@ -53,28 +52,38 @@
         <p>
             alert(message);
         </p>
-        <li>I learned how connect javascript and html. Along with that we make some buttons so 
-            they display message in the page.</li>
-        <li>
-            Variables that have been declared using the let keyword can be reassigned to another value.
+        <li>I learned how to import. Import you have to put import {/...,} such as 
+            import {sayHi, sayBye} from 'path/folder/say.js'
         </li>
         <li>
-            Scope refers how to iterate through a complex objects'
+            You can also import "as" such as import {sayHi as hello, sayBye as goodbye} from 'path/folder/say.js'It will then replace 
+            the word instead of hi it will be hello.  
         </li>
     </ul>
 
-    <h2>Arrays</h2>
+    <h2>Object Method Notes</h2>
     <ul>
-        <li>
-            To place the string ‘Superman’ inside the first element of the array heroes.
-        </li>
-        <p>const heroes = [];</p>
-        <p>heroes[0] = ‘Superman’;</p>
+        <p>It the code below it used a Function Expression to create a function and assign it to a property of the object.
+    <p>let user = {
+            name: "Joe"
+        age: 35
+    };</p>
+        <p>user.sayHi =function(){
+            alert('Hello')
+        };
+    user.sayHi(); //Hello!
+    </p>
 
         <li>
-            To delete an operator from a array
+            Functions that are stored in object properties are method
+            Methods allow objects to act like objects
+            Methods can reference the object.
         </li>
-        <p>delete heroes[0]</p>
+        <li>
+            When a function is declared it may use this but it will have zero value until the function is called.
+            A function can be copied
+            When a function is called in the method the value of this is called the object
+        </li>
     </ul>
 
 </main>
