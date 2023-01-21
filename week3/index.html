@@ -1,0 +1,263 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" href="../style/main.css" rel="stylesheet"/>
+    <link type="text/css" href="../style/nav.css" rel="stylesheet"/>
+    <title>Week03</title>
+
+</head>
+<body>
+
+    <header>
+        <div class ="header-content">
+            <div class = "header-text">
+                <h1> Joe Burner </h1> 
+                <h2>WDD 330: Assignment Portal</h2>
+            </div>
+
+        </div>
+    </header>
+
+    <div class="dropdownmenu">
+        <ul>
+            <li>
+                <a href="https://mjburn0428.github.io/WDD330/index"> Home</a>
+            </li>
+            <li>
+            <a href="https://github.com/Peererxon/WDD330"> Team 3 Repo</a>
+            </li>
+            <li>
+            <a href="https://mjburn0428.github.com/WDD330/week3/team"> Team 3 Weekly Notes</a>
+            </li>
+        </ul>
+    </div>
+<main>
+    <h1>Week 03 Learning Notes</h1>
+    
+    <p>It is crazy to think that smartphone influence on people's lives are growing more common each day. Adapting websites
+        to smartphones takes a lot of considerbale thought into making a website or webapp look good and function good on a smarthphone.
+         
+    </p>
+    <ul>
+        <li>Content priortization</li>
+        <li>Easy to navtiagte</li>
+        <li>Have target sizes for tappable texts</li>
+        <li>User control</li>
+        <li>Easy to read text.</li>
+        <li>Visibile in all lighting enviroments</li>
+    </ul>
+
+    <h2>Programming basics</h2>
+    <ul>
+
+        <li>
+            setTimeout allows to run a function after the interval of time.
+        </li>
+        <li>
+            setInterval allows to run a funtion repeatedly starting after the interval of time.
+        </li>
+        <p>
+            let i = 1;
+            setInterval(function() {
+                func(i++);
+            }, 100);
+        </p>
+        <p>
+                let i = 1;
+                setTimeout(function run() {
+                    func(i++);
+                    setTimeout(run, 100);
+                }, 100);
+        </p>
+        <li> I also learned a bit about API and how to fetch API from a server when I took Javascript class. For my 
+            final project I used the fetch from Pokeapi which I created an awesome PokeDex with custom animations. API's are based 
+            on objects. Code interacts with API's using more javascript objects which in turn serve as containers
+            for the data the API uses. 
+        </li>
+
+    <h2>Object Method Notes for API</h2>
+    <ul>
+      
+    <p>Working with API's can be fun in my opinion. As mentioned when I worked on my Pokedex 
+        I had a blast working on it. Calling the data from PokeAPI and implementing it into the 
+        app was fun. My code is below. As you can see I am calling the code from PokeAPI for evolution of 
+        a Pokemon.
+
+
+        his.getPokemon = function() {
+      return $http({
+        method: 'GET',
+        url: 'https://pokeapi.co/api/v2/pokemon/?limit=811'
+      }).then(function(response) {
+        var data = response.data.results;
+        var pokemon = [];
+        for (var i = 0; i < data.length; i++) {
+          if (i < 721) {
+            pokemon.push({name: data[i].name.charAt(0).toUpperCase() + data[i].name.slice(1), id: (i + 1).toString(), img: 'https://www.serebii.net/art/th/' + (i + 1) + '.png'});
+          }
+          else {
+            if (data[i].name.includes('pikachu-') || data[i].name.includes('-eternal') || data[i].name.includes('-small') || data[i].name.includes('-large') || data[i].name.includes('-super') || data[i].name.includes('-sunny') || data[i].name.includes('-snowy') || data[i].name.includes('-rainy') || data[i].name.includes('-striped')){
+
+            }
+            else {
+              pokemon.push({name: data[i].name.charAt(0).toUpperCase() + data[i].name.slice(1), id: "", img: 'https://img.pokemondb.net/artwork/' + data[i].name + '.jpg'});
+            }
+          }
+        }
+        return pokemon;
+      });
+    };
+
+    this.getPokemonSpecies = function (pokemon) {
+      var url = pokemon.name.toLowerCase()
+      return $http({
+        method: 'GET',
+        url: 'https://pokeapi.co/api/v2/pokemon-species/' + url + '/'
+      }).then(function (response) {
+        var data = response.data;
+        var egg_groups = [];
+        var description;
+        var gender_rate;
+        for (var i = 0; i < data.egg_groups.length; i++) {
+          egg_groups.push(data.egg_groups[i].name);
+        }
+        if (data.flavor_text_entries[1].language.name === 'en') {
+          description = data.flavor_text_entries[1].flavor_text;
+        } else if (data.flavor_text_entries[2].language.name === 'en') {
+          description = data.flavor_text_entries[2].flavor_text;
+        }
+        if (data.gender_rate == -1) {
+          gender_rate = "N/A";
+        } else {
+          gender_rate = '\u2642' + (((8 - data.gender_rate) / 8) * 100 ).toFixed(2) +
+            "% " + '\u2640' + ((data.gender_rate / 8) * 100).toFixed(2) + "% ";
+        }
+        var monster = {
+          base_happiness: data.base_happiness,
+          capture_rate: ((data.capture_rate / 255) * 100).toFixed(2),
+          color: data.color.name,
+          description: description,
+          egg_groups: egg_groups,
+          evolution_chain: data.evolution_chain.url,
+          habitat: data.habitat ? data.habitat.name : 'N/A',
+          gender_rate: gender_rate,
+          genera: data.genera[2],
+          growth_rate: data.growth_rate.name,
+          has_gender_differences: data.has_gender_differences,
+          hatch_counter: data.hatch_counter,
+        };
+        return monster
+      })
+    };
+
+    this.getMoreDetails = function(pokemon) {
+      var url = pokemon.name.toLowerCase()
+      return $http({
+        method: 'GET',
+        url: 'https://pokeapi.co/api/v2/pokemon/' + url + '/'
+      }).then(function (response) {
+        var data = response.data;
+        var img;
+        var naturalMoves = [];
+        var machineMoves = [];
+        for (var i = 0; i < data.moves.length; i++) {
+          if (data.moves[i].version_group_details[0].level_learned_at !== 0) {
+            naturalMoves.push({
+              name: data.moves[i].move.name,
+              lvl: data.moves[i].version_group_details[0].level_learned_at
+            })
+          } else {
+            machineMoves.push(data.moves[i].move.name)
+          }
+        }
+        if (data.id > 721) {
+          img = 'https://img.pokemondb.net/artwork/' + pokemon.name + '.jpg';
+        } else {
+          img = 'https://www.serebii.net/art/th/' + data.id + '.png';
+        }
+        var monster = {
+          name: pokemon.name,
+          id: data.id,
+          img: img,
+          stats: data.stats,
+          types: data.types,
+          naturalMoves: naturalMoves,
+          machineMoves: machineMoves,
+          abilities: data.abilities,
+          height: data.height,
+          weight: data.weight,
+        };
+        return monster;
+      });
+    };
+
+    this.getEvolution = function(url) {
+      return $http({ method: 'GET', url: url }).then(function(response) {
+        var evoChain = [];
+        var data = response.data.chain;
+        function evolve(evolution, i) {
+          var triggerName =  evolution.evolves_to[i].evolution_details[0].trigger.name;
+          var how;
+          if (triggerName === 'level-up') {
+            if (evolution.evolves_to[i].evolution_details[0].min_level) {
+              how = 'at level ' + evolution.evolves_to[i].evolution_details[0].min_level
+            } else if (evolution.evolves_to[i].evolution_details[0].min_happiness) {
+              how = 'with a minimum happiness of ' + evolution.evolves_to[i].evolution_details[0].min_happiness
+            } else if (evolution.evolves_to[i].evolution_details[0].location) {
+              how = 'at ' + evolution.evolves_to[i].evolution_details[0].location.name
+            } else if (evolution.evolves_to[i].evolution_details[0].known_move_type) {
+              how = 'with a known move type of ' + evolution.evolves_to[i].evolution_details[0].known_move_type.name
+            } else {
+              how = 'through unknown means'
+            }
+          } else if (triggerName === 'use-item') {
+            how = 'with a ' + evolution.evolves_to[i].evolution_details[0].item.name
+          } else if (triggerName === 'trade') {
+            how = 'by trade'
+          } else {
+            how = 'through unknown means'
+          }
+          evoChain.push({
+            from: evolution.species.name,
+            to: evolution.evolves_to[i].species.name,
+            how: how,
+          });
+        };
+        if (data.evolves_to.length !== 0) {
+          for (var i = 0; i < data.evolves_to.length; i++) {
+            evolve(data, i)
+            if (data.evolves_to[i].evolves_to.length !== 0) {
+              for (var j = 0; j < data.evolves_to[i].evolves_to.length; j++) {
+                evolve(data.evolves_to[i], j);
+              }
+            }
+          }
+        }
+        if (evoChain.length === 0) {
+          evoChain.push({from: data.species.name, to: 'has no evolutions', how: 'never'});
+        }
+        return evoChain;
+      });
+    };
+
+});
+    </p>
+
+</main>
+
+<footer>
+    <div class ="footer-content">
+        &copy;<span id="year"></span> | Joe Burner | BYU-I |<a class ="two" href = "https://www.byui.edu/online">BYU-I Online Learning. </a>
+        <br>
+    <div class = "update_time">
+            Last Updated: <span id="update"></span> 
+    </div>
+    </div>
+</footer>
+    
+</body>
+</html>
