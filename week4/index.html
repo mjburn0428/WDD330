@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" href="../style/main.css" rel="stylesheet"/>
+    <link type="text/css" href="../style/nav.css" rel="stylesheet"/>
+    <title>Week03</title>
+
+</head>
+<body>
+
+    <header>
+        <div class ="header-content">
+            <div class = "header-text">
+                <h1> Joe Burner </h1> 
+                <h2>WDD 330: Assignment Portal</h2>
+            </div>
+
+        </div>
+    </header>
+
+    <div class="dropdownmenu">
+        <ul>
+            <li>
+                <a href="https://mjburn0428.github.io/WDD330/index"> Home</a>
+            </li>
+            <li>
+            <a href="https://github.com/Peererxon/WDD330"> Team 3 Repo</a>
+            </li>
+            <li>
+            <a href="https://mjburn0428.github.com/WDD330/week3/team"> Team 3 Weekly Notes</a>
+            </li>
+        </ul>
+    </div>
+<main>
+    <h1>Week 04 Learning Notes</h1>
+    
+    <p>This week I learned about coding styles. I know when I was beginning into the web development scene 
+      I would do rookie mistakes such as 
+
+      if (n < 0) {alert(`Power ${n} is not supported`);} 
+
+      Now I do this:
+
+      if (n < 0) {
+     alert(`Power ${n} is not supported`);
+    }
+
+    By applying this last style the code is much easier to read and understand.
+
+    I also learned early on indenting code. If your code is indented it will need to follow suit with the rest of the code. 
+         
+    </p>
+    
+
+    <h2>Programming basics</h2>
+    <ul>
+
+        <li>
+            Funtion placement is where if you write several helper functions and the code that uses them
+            there are a few ways to organzize the functions.
+        </li>
+        <li>
+        // function declarations
+          function createElement() {
+  ...
+            }
+
+            function setHandler(elem) {
+  ...
+            }
+
+            function walkAround() {
+  ...
+            } 
+            
+            // the code which uses them
+            let elem = createElement();
+            setHandler(elem);
+            walkAround();
+
+        </li>
+        <p>
+           You must write the code first then write the functions. 
+
+           // the code which uses the functions
+          let elem = createElement();
+          setHandler(elem);
+          walkAround();
+
+          // --- helper functions ---
+          function createElement() {
+  ...
+          }
+
+          function setHandler(elem) {
+  ...
+          }
+
+          function walkAround() {
+  ...
+          }
+        </p>
+        <p>
+          The second variant is preferred most of the time when writing code and functions. 
+          When reading code we want to know and understand what the code actually does. If the code 
+          goes first then it is much clearer from the start on what the code and function
+          do.     
+        </p>
+        <li>  
+        </li>
+
+    <h2>Team notes</h2>
+    <p>
+          I have had a minor conflict with my team this week. I think we might have resolved it,
+          but the issue is we aren't able to meet together which has been problematic this last four weeks
+          of the semester. So I have been tackling projects as I have seen and feel comfortable doing.
+          
+          I think it's a cultural difference but I hope we will work it out. I am meeting finally with one member this Saturday
+          Yay!
+        </p>
+      
+  
+
+</main>
+
+<footer>
+    <div class ="footer-content">
+        &copy;<span id="year"></span> | Joe Burner | BYU-I |<a class ="two" href = "https://www.byui.edu/online">BYU-I Online Learning. </a>
+        <br>
+    <div class = "update_time">
+            Last Updated: <span id="update"></span> 
+    </div>
+    </div>
+</footer>
+    
+</body>
+</html>
