@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" href="../style/main.css" rel="stylesheet"/>
+    <link type="text/css" href="../style/nav.css" rel="stylesheet"/>
+    <title>Week05</title>
+
+</head>
+<body>
+
+    <header>
+        <div class ="header-content">
+            <div class = "header-text">
+                <h1> Joe Burner </h1> 
+                <h2>WDD 330: Assignment Portal</h2>
+            </div>
+
+        </div>
+    </header>
+
+    <div class="dropdownmenu">
+        <ul>
+            <li>
+                <a href="https://mjburn0428.github.io/WDD330/index"> Home</a>
+            </li>
+            <li>
+            <a href="https://github.com/Peererxon/WDD330"> Team 3 Repo</a>
+            </li>
+            <li>
+            <a href="https://mjburn0428.github.com/WDD330/week4/team.html"> Team 3 Weekly Notes</a>
+            </li>
+        </ul>
+    </div>
+<main>
+    <h1>Week 05 Learning Notes</h1>
+    
+    <p>This week I learned about Fetch and what Javascript can do with Fetch. Fetch is a Javascript
+        function which can send network requests to a server and load that information when it is needed. For example
+        one can submit an order, load information, get updates etc. The basic syntax is 
+
+     let promise = fetch(url, [options])
+
+    let response = await fetch(url);
+
+if (response.ok) { // if HTTP-status is 200-299
+  // get the response body (the method explained below)
+  let json = await response.json();
+} else {
+  alert("HTTP-Error: " + response.status);
+}
+
+One can get a JSON object with the latest commits from a GitHub Repo. 
+
+let url = 'https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits';
+let response = await fetch(url);
+
+let commits = await response.json(); // read response body and parse as JSON
+
+alert(commits[0].author.login);
+
+let response = await fetch('https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits');
+
+let text = await response.text(); // read response body as text
+
+alert(text.slice(0, 80) + '...');
+         
+    </p>
+    
+
+    <h2>Programming basics (Fetch)</h2>
+    <ul>
+
+        <li>
+            I liked reading about the pre flight request when using Fetch. I think of it 
+            as flying in my flight simulator I file a pre flight plan with ATC (online network) then I 
+            request the needed clearences then I depart for the destination to whereever that may take me.
+            Similar to this.
+
+        </li>
+        <li>
+            OPTIONS /service.json
+            Host: site.com
+            Origin: https://javascript.info
+            Access-Control-Request-Method: PATCH
+            Access-Control-Request-Headers: Content-Type,API-Key
+        </li>
+        <p>
+           The preflight response 
+
+           200 OK
+            Access-Control-Allow-Origin: https://javascript.info
+            Access-Control-Allow-Methods: PUT,PATCH,DELETE
+            Access-Control-Allow-Headers: API-Key,Content-Type,If-Modified-Since,Cache-Control
+            Access-Control-Max-Age: 86400
+        </p>
+        <p>
+          The second variant is preferred most of the time when writing code and functions. 
+          When reading code we want to know and understand what the code actually does. If the code 
+          goes first then it is much clearer from the start on what the code and function
+          do.     
+        </p>
+        <li>  
+            The actual request is this,
+
+            PATCH /service.json
+            Host: site.com
+            Content-Type: application/json
+            API-Key: secret
+            Origin: https://javascript.info
+        </li>
+
+    <h2>Team notes</h2>
+    <p>
+         One thing I did learn is that we all as programmers over complicate code. Single page apps serve
+         all of the code for an entire multi-UI from one index.html 
+
+         1.Configure the server to point all paths on a domain back to the root index.html file. For example, todolist.com and todolist.com/lists should both point to the same file.
+
+         2.Suppress the default behavior when someone clicks a link that points to another page in the app.
+        
+         3.Use more JavaScript—history.pushState()—to update the URL without triggering a page reload.
+        
+         4.Match the URL against a map of routes, and serve the right content based on it.
+        
+         5.If your URL has variable information in it (like a todolist ID, for example), parse that data out of the URL.
+        
+         6.Detect when someone clicks the browser’s back button/forward button, and update the URL and UI.
+        
+         7.Update the title element on the page.
+        
+         8.Use even more JavaScript to dynamically focus the content area when the content changes (for screen-reader users).
+
+        </p>
+      
+  
+
+</main>
+
+<footer>
+    <div class ="footer-content">
+        &copy;<span id="year"></span> | Joe Burner | BYU-I |<a class ="two" href = "https://www.byui.edu/online">BYU-I Online Learning. </a>
+        <br>
+    <div class = "update_time">
+            Last Updated: <span id="update"></span> 
+    </div>
+    </div>
+</footer>
+    
+</body>
+</html>
