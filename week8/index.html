@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" href="../style/main.css" rel="stylesheet"/>
+    <link type="text/css" href="../style/nav.css" rel="stylesheet"/>
+    <title>Week05</title>
+
+</head>
+<body>
+
+    <header>
+        <div class ="header-content">
+            <div class = "header-text">
+                <h1> Joe Burner </h1> 
+                <h2>WDD 330: Assignment Portal</h2>
+            </div>
+
+        </div>
+    </header>
+
+    <div class="dropdownmenu">
+        <ul>
+            <li>
+                <a href="https://mjburn0428.github.io/WDD330/index"> Home</a>
+            </li>
+            <li>
+            <a href="https://github.com/Peererxon/WDD330"> Team 3 Repo</a>
+            </li>
+            <li>
+            <a href="https://mjburn0428.github.io/WDD330/week6/team.html"> Team 3 Weekly Notes</a>
+            </li>
+        </ul>
+    </div>
+<main>
+    <h1>Week 08 Learning Notes</h1>
+    
+    <p>
+    This week I learned about JSON webtokens or JWT for short. JWT are an open standard
+    which defines a compact and self contained way to securely transmit information and data 
+    between parties which operates as a JSON object. The information can be verified 
+    and trusted because of a digital signature. JWT's are signed using a HMAC or a public
+    or private key using RSA. 
+
+
+    </p>
+    
+
+    <h2>Programming basics: When to use JWT's</h2>
+    <ul>
+            <p> 
+            When JSON webtokens are useful when one needs to have an Authentication method and exchange of information.
+
+            Authentication is the typical scenario for when to use a JWT once a user is logged in. Each 
+            request  will incldue the JWT allowing the user to access services, routes, resources which are 
+            permitted within the token. Single Sign On is a feature which uses JWT a lot.
+
+            Information Exchange JWT's are an excellent way of securly transmitting information between 
+            users which is effective because it is signed. Some code snippets include
+
+
+            {
+             'alg': 'HS256',
+            'typ': 'JWT'
+            }
+            This is the payload Base64Url
+
+            {
+             'sub': '1234567890',
+             'name': 'John Doe',
+             'admin': true
+            }
+            This is the signature. 
+            
+            To create the signature
+              HMACSHA256(
+                base64UrlEncode(header) + '.' +
+                base64UrlEncode(payload),
+                secret)
+
+                eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+                
+                The above is the JWT which has a header and payload encoded and it is signed with a secret. 
+            </p>
+        
+        
+
+    <h2>Team notes</h2>
+    <p>
+        This week I made some adjustements to the sleep outside page. Landon redid and styled the checkout button for me.
+        He told me I did an excellent job on the checkout form. I felt it could've been better but it works and that's all that 
+        matters to me. 
+
+        </p>
+      
+  
+
+</main>
+
+<footer>
+    <div class ="footer-content">
+        &copy;<span id="year"></span> | Joe Burner | BYU-I |<a class ="two" href = "https://www.byui.edu/online">BYU-I Online Learning. </a>
+        <br>
+    <div class = "update_time">
+            Last Updated: <span id="update"></span> 
+    </div>
+    </div>
+</footer>
+    
+</body>
+</html>
