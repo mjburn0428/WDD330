@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" href="../style/main.css" rel="stylesheet"/>
+    <link type="text/css" href="../style/nav.css" rel="stylesheet"/>
+    <title>Week10</title>
+
+</head>
+<body>
+
+    <header>
+        <div class ="header-content">
+            <div class = "header-text">
+                <h1> Joe Burner </h1> 
+                <h2>WDD 330: Assignment Portal</h2>
+            </div>
+
+        </div>
+    </header>
+
+    <div class="dropdownmenu">
+        <ul>
+            <li>
+                <a href="https://mjburn0428.github.io/WDD330/index"> Home</a>
+            </li>
+            <li>
+            <a href="https://github.com/Peererxon/WDD330"> Team 3 Repo</a>
+            </li>
+            <li>
+            <a href="https://mjburn0428.github.io/WDD330/week10/team.html"> Team 3 Weekly Notes</a>
+            </li>
+        </ul>
+    </div>
+<main>
+    <h1>Week 09 Learning Notes: Storage</h1>
+    
+    <p>
+    This week I learned about Local Storage and Session Storage. For Session Storage
+    the data will survive and be there after a page refresh, and for Local Storage a full
+    restart of the browser. 
+
+    Both Storage Objects have the same methods and properties such as 
+    setItem(key,value)
+    getItem(key)
+    removeItem(key)
+    clear()
+    key(index) 
+    length
+
+    We can use a plain object to obtain or set keys like this,
+    //This sets the key  
+    localStorage.test = 3;
+
+    // This obtains the key
+    alert( localStorage.test ); // 3
+
+    // This removes the key
+    delete localStorage.test;
+
+    We can also loop over keys. Storage objects are not iterable. We can use an
+    array to loop over them such as,
+
+    for(let i=0; i<"localStorage.length"; i++) {
+    let key = localStorage.key(i);
+    alert(`${key}: ${localStorage.getItem(key)}`);
+    }
+
+    We can filter fields which hasOwnProperty such as:
+    
+    for(let key in localStorage) {
+    if (!localStorage.hasOwnProperty(key)) {
+    continue; // skip keys like "setItem", "getItem" etc
+    }
+    alert(`${key}: ${localStorage.getItem(key)}`);
+    }
+
+    As a note both key and value must be strings. If it were another type such as 
+    a number or an object it would get converetd to a string automatically.
+    We can use JSON to store objects 
+
+    localStorage.user = JSON.stringify({name: "John"});
+
+    // sometime later
+    let user = JSON.parse( localStorage.user );
+    alert( user.name ); // John
+
+    Session storage is used less often than local storage. The properties and methods
+    will be the same but very limtied. Session storage exists within the browser tab.
+    Another tab with the same page will be stored different in a different storage.
+
+    To sum it all up. Both value and ley need to be strings. Depending on the browser the limit
+    is 5mb. The storage of local and session have no expiration, and finally the data is bound to the 
+    orgin of the domain,port,or protocol.
+
+    Local storage survives a browser restart while session storage survives a page refresh but not when the 
+    tab is closed.
+    </p>
+    
+
+    <h2>Programming basics: Drawing Graphics</h2>
+    <ul>
+            <p> 
+           This week I found out web browsers contain some powerful graphics programming tools from the SVG language. It is 
+           possible to use it as a canvas. You can add images to a canvas, have amazing graphics such as 2d grpahics, you can draw 
+           shapes and many many other things. To start you'll need a code similar to the below. 
+
+        <canvas width="320" height="240">
+            <p>Description of the canvas.</p>
+        </canvas>
+
+        To utilize this, you must make a local copy of the canavs start directory which must contain
+        three files, the index.html, script.js, and the css style sheet. 
+
+        You can also create loops to play animations within the canvas. The loops are similar to below
+
+        ctx.fillStyle = `rgba(${255 - length},0,${255 - length},0.9)`;
+        ctx.beginPath();
+        ctx.moveTo(moveOffset, moveOffset);
+        ctx.lineTo(moveOffset + length, moveOffset);
+        const triHeight = length / 2 * Math.tan(degToRad(60));
+        ctx.lineTo(moveOffset + length / 2, moveOffset + triHeight);
+        ctx.lineTo(moveOffset, moveOffset);
+        ctx.fill();
+
+        length--;
+        moveOffset += 0.7;
+        ctx.rotate(degToRad(5));
+
+        To play animations we will create a loop but request it through an animation frame. 
+        function loop() {
+        ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
+        ctx.fillRect(0, 0, width, height);
+
+        for (const ball of balls) {
+        ball.draw();
+        ball.update();
+        ball.collisionDetect();
+        }
+
+         requestAnimationFrame(loop);
+    }
+
+    loop();
+
+    There are many different things you can do with the graphics of a browser within the code. From a 
+    simple drawing applicaiton to a simple animation of a person walking. (Oregon Trail game style)
+
+
+
+            </p>
+        
+        
+
+    <h2>Team notes</h2>
+    <p>
+        This week I assisted in implementing the admin login. I created a placeholder to get to the admin index
+        page, but then I revised the button to look a bit more profesisonal. I worked on product color swatch but couldn't figure it out.
+        I started on the image resize. However I am pleased with the image resize already. 
+
+        </p>
+      
+  
+
+</main>
+
+<footer>
+    <div class ="footer-content">
+        &copy;<span id="year"></span> | Joe Burner | BYU-I |<a class ="two" href = "https://www.byui.edu/online">BYU-I Online Learning. </a>
+        <br>
+    <div class = "update_time">
+            Last Updated: <span id="update"></span> 
+    </div>
+    </div>
+</footer>
+    
+</body>
+</html>
