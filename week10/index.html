@@ -36,133 +36,38 @@
         </ul>
     </div>
 <main>
-    <h1>Week 09 Learning Notes: Storage</h1>
+    <h1>Week 10 Learning Notes: Functions Execution Contexts</h1>
     
     <p>
-    This week I learned about Local Storage and Session Storage. For Session Storage
-    the data will survive and be there after a page refresh, and for Local Storage a full
-    restart of the browser. 
+    This week I learned about Functions. Principles of Javascript. It is taking the words which intreprets the words
+    on how the web browser works. It parses line by line. It is storing variables in the memory. 
 
-    Both Storage Objects have the same methods and properties such as 
-    setItem(key,value)
-    getItem(key)
-    removeItem(key)
-    clear()
-    key(index) 
-    length
+    Once the code is written, we use it as an execution context. It is the space in which is to execute the code which takes it line
+    by line.  The threa in javascript goes from top to bottom and never skip a line. Order line by line is the order to be followed. 
+    Also one function at a time. Single threaded. 
 
-    We can use a plain object to obtain or set keys like this,
-    //This sets the key  
-    localStorage.test = 3;
-
-    // This obtains the key
-    alert( localStorage.test ); // 3
-
-    // This removes the key
-    delete localStorage.test;
-
-    We can also loop over keys. Storage objects are not iterable. We can use an
-    array to loop over them such as,
-
-    for(let i=0; i<"localStorage.length"; i++) {
-    let key = localStorage.key(i);
-    alert(`${key}: ${localStorage.getItem(key)}`);
-    }
-
-    We can filter fields which hasOwnProperty such as:
+    When you execute a function you create a new execution conext which compromises of
+    the thread of execution and a local memory. 
     
-    for(let key in localStorage) {
-    if (!localStorage.hasOwnProperty(key)) {
-    continue; // skip keys like "setItem", "getItem" etc
-    }
-    alert(`${key}: ${localStorage.getItem(key)}`);
-    }
-
-    As a note both key and value must be strings. If it were another type such as 
-    a number or an object it would get converetd to a string automatically.
-    We can use JSON to store objects 
-
-    localStorage.user = JSON.stringify({name: "John"});
-
-    // sometime later
-    let user = JSON.parse( localStorage.user );
-    alert( user.name ); // John
-
-    Session storage is used less often than local storage. The properties and methods
-    will be the same but very limtied. Session storage exists within the browser tab.
-    Another tab with the same page will be stored different in a different storage.
-
-    To sum it all up. Both value and ley need to be strings. Depending on the browser the limit
-    is 5mb. The storage of local and session have no expiration, and finally the data is bound to the 
-    orgin of the domain,port,or protocol.
-
-    Local storage survives a browser restart while session storage survives a page refresh but not when the 
-    tab is closed.
     </p>
-    
 
-    <h2>Programming basics: Drawing Graphics</h2>
+    <h2>Programming basics: Global/Return/Call Stack </h2>
     <ul>
             <p> 
-           This week I found out web browsers contain some powerful graphics programming tools from the SVG language. It is 
-           possible to use it as a canvas. You can add images to a canvas, have amazing graphics such as 2d grpahics, you can draw 
-           shapes and many many other things. To start you'll need a code similar to the below. 
+           When we call the function we have an arguement. It will return the value of the result into the global variable output. 
 
-        <canvas width="320" height="240">
-            <p>Description of the canvas.</p>
-        </canvas>
+            A call stack is a similar to an array. A stack is great for tracking how things work. When we call a function it is called a call stack.
+            It is a great way of representing how the functions work. It will grab a piece of data in the area, which tracks the execution contexts. We keep 
+            track of the fucntions being called in Javascrip with a Call stack. 
 
-        To utilize this, you must make a local copy of the canavs start directory which must contain
-        three files, the index.html, script.js, and the css style sheet. 
-
-        You can also create loops to play animations within the canvas. The loops are similar to below
-
-        ctx.fillStyle = `rgba(${255 - length},0,${255 - length},0.9)`;
-        ctx.beginPath();
-        ctx.moveTo(moveOffset, moveOffset);
-        ctx.lineTo(moveOffset + length, moveOffset);
-        const triHeight = length / 2 * Math.tan(degToRad(60));
-        ctx.lineTo(moveOffset + length / 2, moveOffset + triHeight);
-        ctx.lineTo(moveOffset, moveOffset);
-        ctx.fill();
-
-        length--;
-        moveOffset += 0.7;
-        ctx.rotate(degToRad(5));
-
-        To play animations we will create a loop but request it through an animation frame. 
-        function loop() {
-        ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
-        ctx.fillRect(0, 0, width, height);
-
-        for (const ball of balls) {
-        ball.draw();
-        ball.update();
-        ball.collisionDetect();
-        }
-
-         requestAnimationFrame(loop);
-    }
-
-    loop();
-
-    There are many different things you can do with the graphics of a browser within the code. From a 
-    simple drawing applicaiton to a simple animation of a person walking. (Oregon Trail game style)
-
+            It has one global execution context with multiple function contexts. 
 
 
             </p>
         
         
 
-    <h2>Team notes</h2>
-    <p>
-        This week I assisted in implementing the admin login. I created a placeholder to get to the admin index
-        page, but then I revised the button to look a bit more profesisonal. I worked on product color swatch but couldn't figure it out.
-        I started on the image resize. However I am pleased with the image resize already. 
-
-        </p>
-      
+        
   
 
 </main>
