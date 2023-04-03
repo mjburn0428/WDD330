@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Herriman Chamber of Commerce" />
+    <title>The Kinland Farms</title>
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/small.css" />
+    <link rel="stylesheet" href="css/medium.css" />
+    <link rel="stylesheet" href="css/large.css" />
+    <script src="js/current_date.js" defer></script>
+    <script src="js/lastvisit.js" defer></script> 
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <picture>
+          <img
+            src="images/coclogo.jpg"
+            alt="Herriman Chamber of Commerce Logo"
+          />
+        </picture>
+      </div>
+      <div class="headings">
+        <h1 class="headings1">Work report</h1>
+      </div>
+
+      <div class="social" id="facebook">
+        <a href="https://facebook.com" target="_blank">
+          <img
+            src="images/facebook.png"
+            alt="Facebook Icon"
+          />
+        </a>
+      </div>
+      <div class="social" id="instagram">
+        <a href="http://instagram.com" target="_blank">
+          <img
+            src="images/Instagram.png"
+            alt="Instagram Icon"
+          />
+        </a>
+      </div>
+
+      <nav>
+        <button id="hamburgerBtn">&#9776;</button>
+        <ul id="primaryNav">
+          <li><a href="https://mjburn0428.github.io/WDD230/chamber/index">Home</a></li>
+          <li><a href="https://mjburn0428.github.io/WDD230/chamber/discover">Discover</a></li>
+          <li><a href="https://mjburn0428.github.io/WDD230/chamber/contact">Contact</a></li>
+          <li><a href="https://mjburn0428.github.io/WDD230/chamber/join">Join</a></li>
+          <li><a href="https://mjburn0428.github.io/WDD230/">Directory</a></li>
+          <li><a href="https://herriman.applicantpro.com/jobs/">Careers</a></li>
+        </ul>
+      </nav>
+
+      <div class="headerDate"></div>
+    </header>
+    <!-- CONTENT HERE -->
+<main class="joinPage">
+    <form method="get" action="thanks_2.html">
+        <fieldset class="basicInfo">
+            <legend class="formHead">Basic Information</legend>
+            <label class="top">First Name*<input type="text" name="fname" required autofocus> </label>
+            <label class="top">Last Name*<input type="text" name="lname" required></label>
+        </fieldset>
+
+        <fieldset>
+            <legend class="formHead">Work Report</legend>
+            <label class="textArea">Report of work done
+                <textarea id="describe" name="describe" rows="4" cols="50" maxlength="250" placeholder="Please provide a report of the work which was completed."></textarea>
+            </label>
+        
+        </fieldset>
+        <input type="hidden" id="visitTime" name="visitTime" value="">
+
+        <input type="submit" value="Submit Comment" class="submitBtn">
+
+    </form>
+
+      
+    
+</main>
+      
+    
+</main>    
+    </main>
+    <footer>
+      <div class="logo">
+        <picture>
+          <img src="images/coclogo.jpg" alt="Herriman Chamber of Commerce Logo" />
+        </picture>
+      </div>
+      <div class="col2">
+        <h1 class="logo-label">Herriman Chamber of Commerce</h1>
+
+        <div class="address">
+          <h5 class="address1">5219 West Armada Way</h5>
+          <h5 class="address2">Herriman, UT 84096</h5>
+        </div>
+      </div>
+      <div class="find-us">
+        <h5 class="email">info@herrimancoc.gov</h5>
+        <h5 class="phone">801-555-5555</h5>
+        <p>
+        <span class="mapIcon"><img src="images/mapicon.png" alt="map icon"></span>
+        <a 
+        href="https://www.google.com/maps/d/viewer?mid=1F9UdspojLAmefOus8B6J-j3_FWs&hl=en_US&ll=40.514699930209%2C-112.03158295805815&z=14">
+        Herriman Utah</a>
+        </p>
+      </div>
+
+      <div class="about">
+        <h5 class="copyright">&copy;<span id="copyright-year"></span></h5>
+        <div class="seperator">|</div>
+        <h5 class="developer">Joe Burner</h5>
+        <div class="seperator">|</div>
+        <h5 class="class-project">WDD 230 Project</h5>
+        <div class="seperator" id="last-seperator">|</div>
+        <h5 id="last-update"></h5>
+        <p id="last-visit-p"> It has been <span id="last-visit"></span> days since your last visit.</p>
+      </div>
+    </footer>
+  </section> 
+  </body>
+</html>
