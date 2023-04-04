@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Kinland Farms" />
-    <title>Kinland Farms Report</title>
+    <meta name="description" content="Login for Kinland Farms" />
+    <title>Kinland Farms Login</title>
     <link rel="shortcut icon" href="images/favicon.ico">
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/small.css" />
@@ -16,16 +16,16 @@
   </head>
   <body>
     <header>
-      <div class="logo">
+    <div class="logo">
         <picture>
           <img
             src="images/icon.png"
-            alt="Kinland Farms"
+            alt="Kinland Farms logo"
           />
         </picture>
       </div>
       <div class="headings">
-        <h1 class="headings1">The Kinland Farms</h1>
+        <h1 class="headings1">Kinland Farms</h1>
       </div>
 
       <div class="social" id="facebook">
@@ -58,13 +58,23 @@
 
       <div class="headerDate"></div>
     </header>
-   <!-- CONTENT HERE -->
-<main class="thanks">
+    <!-- CONTENT HERE -->
+<main class="joinPage">
+    <form method="get" action="report.html">
+        <fieldset class="basicInfo">
+            <legend class="formHead">Staff Login</legend>
+            <label class="top">First Name<input type="text" name="fname" required autofocus> </label>
+            <label class="top">Last Name<input type="text" name="lname" required></label>
+        </fieldset>
 
-    <h1>Work Report Submitted Successfully.</h1>
-    <p>Thank you for your hard work and continued support of The Kinlands Farms.</p>
+        <input type="hidden" id="visitTime" name="visitTime" value="">
 
+        <input type="submit" value="Submit Comment" class="submitBtn">
 
+    </form>
+
+      
+    
 </main>
       
     
