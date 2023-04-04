@@ -1,0 +1,143 @@
+@media only screen and (min-width: 35rem) {
+  .logo {
+    margin-left: 1vw;
+  }
+  .logo-container{
+    height: 60px;
+    max-width: 60px;
+    display: block;
+      }
+  header .logo img {       
+      min-width: 50px;        
+  }
+  .headings1{
+      font-size: 1rem;
+      text-align: left;
+  }
+  .headings2{
+      font-size: 1rem;
+      margin-top: 0rem;
+  }
+  #hamburgerBtn {
+    color:black;
+      text-align: right;
+      margin-right: 1rem;
+  }
+    .hero {
+      grid-column: 1/3;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+  .event {
+    display: inline-block;
+  }
+
+  .weather{
+      grid-row: 5;
+      grid-column: 3;
+      border: 0.2em solid var(--color4);
+
+  }
+
+  .news{
+      grid-row:2;
+      grid-column: 1/4;
+      font-size: 1.0rem;
+      border: 0.2em solid var(--color4);
+      text-align: left;
+  }
+
+  .spotlight {
+    grid-column: 1/3;
+    grid-row: 1;
+    display: flex;
+    border: 0.2em solid var(--color4);
+  }
+  .spotlight > div {
+    min-width: 10vw;
+    min-height: 5vw;
+  }
+
+  .join {
+    display: flex;
+    grid-column: 1/3;
+    grid-row: 4;
+    align-items: center;
+  }
+      .join > button {
+        margin: 0.5em;
+      }
+
+      footer {
+        text-align: left;
+        font-size: 100%;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        column-gap: 10px;
+      }
+      footer > div {
+        margin: 0;
+        padding: 0.5rem;
+      }
+      .footer-logo {
+        display: flex;
+      }
+      #footer-address {
+        padding-left: 1em;
+      }
+      .email {
+        margin-top: 0.5em;
+      }
+      footer .seperator {
+        display: block;
+      }
+    
+      .about {
+        margin-top: 0;
+        margin-bottom: 0;
+        border-top: var(--color1) solid 1px;
+        grid-column: 1/4;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    
+      .about > * {
+        margin-top: -0.5rem;
+        padding-right: 1rem;
+      }
+    
+      #last-update {
+        padding-bottom: 0;
+        flex-basis: 100%;
+        text-align: center;
+      }
+      #last-seperator {
+        display: none;
+      }
+
+      .discover {
+  
+        display: grid;
+        grid-template-columns: repeat(2, 300px);
+        column-gap: 2rem;
+    
+    }
+    .joinPage {
+      display: block;
+      margin: 0 auto;
+  }
+
+  form fieldset {
+      max-width: 650px;
+
+  }
+
+  form label.top input, form label.top select form, label.textArea #describe{
+      max-width: 500px;
+  }
+}
+ 
