@@ -1,0 +1,1 @@
+// All functionality of loadSiteTemplate has been replaced by main.js

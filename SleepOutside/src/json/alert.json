@@ -1,0 +1,10 @@
+{
+    "alerts":[
+        {
+            "message":"Get your tents today! Sale on all tent items!",
+            "bgColor":"#a0a0a0",
+            "textColor":"#000000",
+            "customClass":"hide"
+        }
+    ]
+}

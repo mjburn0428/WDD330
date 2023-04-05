@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Sleep Outside | Cart</title>
+
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+
+  <body>
+    <header class="divider" id="header"></header>
+    <ul class="breadcrumbs">
+      <li class="breadcrumbs_item">
+        <a href="../index.html" class="breadcrumbs_link">Home</a>
+      </li>
+      <li class="breadcrumbs_item">
+        <a href="../cart/wishlist.html" class="breadcrumbs_link">Wishlist</a>
+      </li>
+    </ul>
+    <main class="divider">
+      <section class="products">
+        <h2>My Wishlist</h2>
+
+        <ul class="product-list"></ul>
+      </section>
+      <div class="hide-total">
+        <p class="cart-total">Total:</p>
+        <!-- href is replaced with "../checkout/index.html" in javascript in cart.js if cart is not empty. -->
+          <button id="check-out">Add to cart</button>
+      </div>
+    </main>
+
+    <footer id="main-footer"></footer>
+    <script src="../js/main.js" type="module"></script>
+    <script src="../js/wishlist.js" type="module"></script>
+  </body>
+</html>

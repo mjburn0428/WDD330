@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sleep Outside | Product-Listing</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+
+  <body>
+    <header class="divider" id="header"></header>
+    <ul class="breadcrumbs">
+      <li class="breadcrumbs_item">
+        <a href="../index.html" class="breadcrumbs_link">Home</a>
+      </li>
+      <li class="breadcrumbs_item">
+        <a
+          href="../product-listing/index.html"
+          class="breadcrumbs_link"
+          id="quantity"
+          >Product Category</a
+        >
+      </li>
+    </ul>
+
+    <div id="quickLookupModal" class="hide-modal">
+      <button id="modalButton">Close X</button>
+      <div id="quick-modal-product-details"></div>
+    </div>
+
+    <main class="divider">
+      <section class="sort">
+        <form>
+          <label for="sort-by">Sort by</label>
+          <select id="sort-by">
+            <option value="Name">Name</option>
+            <option value="Price">Price</option>
+          </select>
+          <div></div>
+          <label for="order">Ascending</label>
+          <input id="order" type="checkbox" />
+        </form>
+      </section>
+      <section class="products">
+        <h2>Top Products: <span class="title"></span></h2>
+        <ul class="product-list"></ul>
+      </section>
+      <div>
+        <h2>Subscribe to our newsletter</h2>
+        <p>
+          Get exclusive discounts and products before we publish them to your
+          email
+        </p>
+        <form action="#" method="post" class="newsletter-submit-form">
+          <input type="email" placeholder="example@gmail.com" />
+          <button type="submit" class="newsletter-submit-button">
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </main>
+    <footer id="footer"></footer>
+    <script src="../js/main.js" type="module"></script>
+    <script src="../js/productListing.mjs" type="module"></script>
+    <script src="../js/modal.js" type="module"></script>
+  </body>
+</html>

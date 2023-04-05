@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Sleep Outside | ...</title>
+
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+
+  <body>
+    <header class="divider" id="header"></header>
+
+    <ul class="breadcrumbs">
+      <li class="breadcrumbs_item">
+        <a href="../index.html" class="breadcrumbs_link">Home</a>
+      </li>
+      <li class="breadcrumbs_item">
+        <a
+          href="../product-listing/index.html"
+          class="breadcrumbs_link"
+          id="list_page_breadcrumb"
+          >Product Category</a
+        >
+      </li>
+      <li class="breadcrumbs_item">
+        <a
+          href="../product_pages/index.html"
+          class="breadcrumbs_link"
+          id="product_page_breadcrumb"
+          >Product Page</a
+        >
+      </li>
+    </ul>
+
+    <main class="divider">
+      <div id="product_details"></div>
+      <section>
+        <h2>Comments</h2>
+        <div>
+          <form action="#" method="post" class="comment-form" id="comment-form">
+            <textarea
+              name="comment-textarea"
+              id="comment-textarea"
+              cols="10"
+              rows="5"
+            ></textarea>
+            <button type="submit">Comment</button>
+          </form>
+        </div>
+        <div class="comments" id="comments"></div>
+      </section>
+    </main>
+
+    <footer id="footer"></footer>
+    <script src="../js/main.js" type="module"></script>
+    <script src="../js/product.js" type="module"></script>
+    <script src="../js/commentsService.js" type="module"></script>
+  </body>
+</html>
